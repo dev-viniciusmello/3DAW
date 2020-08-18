@@ -7,33 +7,41 @@
      <title>Document</title>
      <link rel="stylesheet" href="./css/geral.css">
 
-</head>
+ </head>
 
  <body>
-    <form >
-        
-        <label class="label">
-            Digite a sua data de nascimento 
-        </label>
+     <form>
+        <h1 style="text-align: center;">Calculo Service</h1>
 
-        <input type="date" name="data" class="input">
+         <label class="label">
+             Digite o seu nome
+         </label>
 
-        <button type="submit" class="button">Enviar Dados</button>
+         <input type="text" name="nome" class="input">
 
-    </form>
+         <label class="label">
+             Digite a sua data de nascimento
+         </label>
 
-    <div class="resposta"><?php
-        
-        
-        if (isset($_GET['data'])) {
+         <input type="date" name="data" class="input">
 
+         <button type="submit" class="button">Enviar Dados</button>
+
+     </form>
+
+     <div class="resposta"><?php
+
+
+        if (isset($_GET['data'], $_GET['nome'])) {
+            $nome = $_GET['nome'];
             $anoDeNascimento =  (int) (str_split($_GET['data'], 4))[0];
             $anoAtual = (int) date('Y');
             $idade = $anoAtual - $anoDeNascimento;
-            echo "<h3>Sua idade e "  . $idade . "!</h3>"; 
-        
+            echo "<h2>Idade: "  . $idade . "</h2>";
+            echo "<h2>Nome: " .  $nome . " </h2>";
+            echo "<h2>Data de Nascimento: " .  $_GET['data'] . " </h2>";
         }
-    ?></div>
-</body>
+        ?></div>
+ </body>
 
  </html>
