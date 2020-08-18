@@ -1,0 +1,21 @@
+body {
+    padding: 10px;
+}
+
+.button {
+    padding: 12px 14px;
+    background-color: black;
+    color: white;
+    border:none;
+}
+
+.input {
+    display: inline-block;
+    width: 50vw;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.label {
+    font-size: 1.2em;
+}
